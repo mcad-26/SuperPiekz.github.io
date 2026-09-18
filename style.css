@@ -380,3 +380,215 @@ footer {
         padding: 25px 20px;
     }
 }
+
+.btn-carrito:active {
+    transform: scale(0.97);
+}
+
+.contenedor-carrito-menu {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-left: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+}
+
+.contenedor-carrito-menu:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+.icono-carrito {
+    font-size: 16px;
+    margin-right: 6px;
+}
+
+.contador-carrito {
+    background-color: var(--morado);
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    min-width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    padding: 0 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.animar-carrito {
+    transform: scale(1.15);
+}
+
+.lateral-carrito {
+    position: fixed;
+    top: 0;
+    right: -350px;
+    width: 350px;
+    height: 100%;
+    background-color: white;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    transition: right 0.3s ease;
+}
+
+.lateral-carrito.activo {
+    right: 0;
+}
+
+.lateral-header {
+    padding: 20px;
+    background-color: var(--azul-morado);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.lateral-header h3 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.lateral-cerrar {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.lateral-cuerpo {
+    padding: 20px;
+    flex: 1;
+    overflow-y: auto;
+}
+
+.carrito-vacio {
+    text-align: center;
+    color: var(--gris-suave);
+    margin-top: 40px;
+}
+
+.carrito-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--gris-etiqueta);
+}
+
+.carrito-item h4 {
+    margin: 0 0 5px 0;
+    font-size: 15px;
+    color: var(--gris-texto);
+}
+
+.carrito-item span {
+    color: var(--azul-verdoso);
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.btn-eliminar-item {
+    background: none;
+    border: none;
+    color: #e63946;
+    font-size: 22px;
+    cursor: pointer;
+    padding: 0 5px;
+    transition: transform 0.2s;
+}
+
+.btn-eliminar-item:hover {
+    transform: scale(1.2);
+}
+
+.lateral-footer {
+    padding: 20px;
+    border-top: 1px solid var(--gris-etiqueta);
+    background-color: #fafbfc;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.lateral-total {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: var(--gris-texto);
+}
+
+.lateral-total span {
+    color: var(--azul-verdoso);
+}
+
+.btn-finalizar {
+    width: 100%;
+    background-color: var(--azul-verdoso);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background-color 0.2s;
+}
+
+.btn-finalizar:hover {
+    background-color: #0e8585;
+}
+
+.btn-vaciar {
+    width: 100%;
+    background-color: transparent;
+    color: #e63946;
+    border: 1px solid #e63946;
+    padding: 8px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 13px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-vaciar:hover {
+    background-color: #e63946;
+    color: white;
+}
+
+.carrito-fondo-oscuro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.carrito-fondo-oscuro.activo {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+@media (max-width: 400px) {
+    .lateral-carrito {
+        width: 100%;
+        right: -100%;
+    }
+}
